@@ -1,0 +1,21 @@
+{
+  "name": "cta_app",
+  "version": "1.0.0",
+  "description": "cta score share",
+  "repository": "https://github.com/jsh612/cta_app",
+  "author": "seungho Jeon <urijsh612@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
