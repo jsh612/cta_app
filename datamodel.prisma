@@ -1,6 +1,7 @@
 type User {
   id: ID! @id
-  username: String! @uinque
+  username: String! @unique
+  password: String!
   acc: [Acc] @relation(name: "Acc" ,onDelete: CASCADE )
   taxAcc: [TaxAcc] @relation(name: "TaxAcc" ,onDelete: CASCADE )
   taxLaw1: [TaxLaw1] @relation(name: "TaxLaw1" ,onDelete: CASCADE )
