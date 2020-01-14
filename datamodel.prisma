@@ -1,0 +1,46 @@
+type User {
+  id: ID! @id
+  username: String! @uinque
+  acc: [Acc] @relation(name: "Acc" ,onDelete: CASCADE )
+  taxAcc: [TaxAcc] @relation(name: "TaxAcc" ,onDelete: CASCADE )
+  taxLaw1: [TaxLaw1] @relation(name: "TaxLaw1" ,onDelete: CASCADE )
+  taxLaw2: [TaxLaw2] @relation(name: "TaxLaw2" ,onDelete: CASCADE )
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type Acc {
+  id: ID! @id
+  user: User! @relation(name: "Acc")
+  score: Float!
+  round: String!
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type TaxAcc {
+  id: ID! @id
+  user: User! @relation(name: "TaxAcc")
+  score: Float!
+  round: String!
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type TaxLaw1 {
+  id: ID! @id
+  user: User! @relation(name: "TaxLaw1")
+  score: Float!
+  round: String!
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type TaxLaw2 {
+  id: ID! @id
+  user: User! @relation(name: "TaxLaw2")
+  score: Float!
+  round: String!
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
