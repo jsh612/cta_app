@@ -1,0 +1,3 @@
+type Mutation {
+  createTaxAcc(score: Float!, round: String!): TaxAcc!
+}

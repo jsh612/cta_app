@@ -6,11 +6,22 @@ export default {
     createAccount: async (_, args) => {
       const { username, password } = args;
       const enPassword = await bcrypt.hash(password, 10);
-      const user = await prisma.createUser({
-        username,
-        password: enPassword
+      const exists = await prisma.$exists.user({
+        username
       });
-      return user;
+      if (exists) {
+        throw Error("해당 아이디가 존재합니다.");
+      }
+      try {
+        const user = await prisma.createUser({
+          username,
+          password: enPassword
+        });
+        return user;
+      } catch (error) {
+        console.log("createAccount 에러:", error);
+        return false;
+      }
     }
   }
 };

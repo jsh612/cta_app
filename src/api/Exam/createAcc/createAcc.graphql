@@ -1,0 +1,3 @@
+type Mutation {
+  createAcc(score: Float!, round: String!): Acc!
+}

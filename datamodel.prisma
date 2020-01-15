@@ -2,10 +2,10 @@ type User {
   id: ID! @id
   username: String! @unique
   password: String!
-  acc: [Acc] @relation(name: "Acc" ,onDelete: CASCADE )
-  taxAcc: [TaxAcc] @relation(name: "TaxAcc" ,onDelete: CASCADE )
-  taxLaw1: [TaxLaw1] @relation(name: "TaxLaw1" ,onDelete: CASCADE )
-  taxLaw2: [TaxLaw2] @relation(name: "TaxLaw2" ,onDelete: CASCADE )
+  accs: [Acc] @relation(name: "Acc" ,onDelete: CASCADE )
+  taxAccs: [TaxAcc] @relation(name: "TaxAcc" ,onDelete: CASCADE )
+  taxLaw1s: [TaxLaw1] @relation(name: "TaxLaw1" ,onDelete: CASCADE )
+  taxLaw2s: [TaxLaw2] @relation(name: "TaxLaw2" ,onDelete: CASCADE )
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }

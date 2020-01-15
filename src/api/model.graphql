@@ -2,10 +2,10 @@ type User {
   id: ID!
   username: String!
   password: String!
-  acc: [Acc]
-  taxAcc: [TaxAcc]
-  taxLaw1: [TaxLaw1]
-  taxLaw2: [TaxLaw2]
+  accs: [Acc]
+  taxAccs: [TaxAcc]
+  taxLaw1s: [TaxLaw1]
+  taxLaw2s: [TaxLaw2]
   createdAt: String!
   updatedAt: String!
 }
@@ -44,4 +44,12 @@ type TaxLaw2 {
   round: String!
   createdAt: String!
   updatedAt: String!
+}
+
+type RoundScore {
+  id: ID!
+  accs: [Acc]
+  taxAccs: [TaxAcc]
+  taxLaw1s: [TaxLaw1]
+  taxLaw2s: [TaxLaw2]
 }
