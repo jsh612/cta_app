@@ -1,0 +1,10 @@
+type Round {
+  accs: [Acc!]!
+  taxAccs: [TaxAcc!]!
+  taxLaw1s: [TaxLaw1!]!
+  taxLaw2s: [TaxLaw2!]!
+}
+
+type Query {
+  seeRound(round: String!): Round!
+}
