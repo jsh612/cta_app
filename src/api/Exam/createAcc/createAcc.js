@@ -4,7 +4,7 @@ export default {
   Mutation: {
     createAcc: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { score, round } = args;
+      const { score, round, academy } = args;
       const { user } = request;
       if (score === "") {
         throw Error("점수를 입력해 주세요");
@@ -29,6 +29,7 @@ export default {
       const acc = await prisma.createAcc({
         score,
         round,
+        academy,
         user: {
           connect: {
             id: user.id

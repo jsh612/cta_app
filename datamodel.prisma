@@ -15,6 +15,7 @@ type Acc {
   user: User! @relation(name: "Acc")
   score: Float!
   round: String!
+  academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -24,6 +25,7 @@ type TaxAcc {
   user: User! @relation(name: "TaxAcc")
   score: Float!
   round: String!
+  academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -33,6 +35,7 @@ type TaxLaw1 {
   user: User! @relation(name: "TaxLaw1")
   score: Float!
   round: String!
+  academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -42,6 +45,7 @@ type TaxLaw2 {
   user: User! @relation(name: "TaxLaw2")
   score: Float!
   round: String!
+  academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }

@@ -6,5 +6,5 @@ type Round {
 }
 
 type Query {
-  seeRound(round: String!): Round!
+  seeRound(round: String!, academy: String!): Round!
 }

@@ -15,6 +15,7 @@ type Acc {
   user: User!
   score: Float!
   round: String!
+  academy: String!
   createdAt: String!
   updatedAt: String!
 }
@@ -24,6 +25,7 @@ type TaxAcc {
   user: User!
   score: Float!
   round: String!
+  academy: String!
   createdAt: String!
   updatedAt: String!
 }
@@ -33,6 +35,7 @@ type TaxLaw1 {
   user: User!
   score: Float!
   round: String!
+  academy: String!
   createdAt: String!
   updatedAt: String!
 }
@@ -42,6 +45,7 @@ type TaxLaw2 {
   user: User!
   score: Float!
   round: String!
+  academy: String!
   createdAt: String!
   updatedAt: String!
 }

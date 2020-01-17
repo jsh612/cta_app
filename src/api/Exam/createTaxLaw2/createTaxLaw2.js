@@ -4,7 +4,7 @@ export default {
   Mutation: {
     createTaxLaw2: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { score, round } = args;
+      const { score, round, academy } = args;
       const { user } = request;
       if (score === "") {
         throw Error("점수를 입력해 주세요");
@@ -29,6 +29,7 @@ export default {
       const taxLaw2 = await prisma.createTaxLaw2({
         score,
         round,
+        academy,
         user: {
           connect: {
             id: user.id
