@@ -12,5 +12,8 @@ export default {
   },
   TaxLaw2: {
     user: ({ id }) => prisma.taxLaw2({ id }).user()
+  },
+  TotalAcc: {
+    user: ({ id }) => prisma.totalAcc({ id }).user()
   }
 };

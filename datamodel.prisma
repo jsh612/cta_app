@@ -6,6 +6,7 @@ type User {
   taxAccs: [TaxAcc] @relation(name: "TaxAcc" ,onDelete: CASCADE )
   taxLaw1s: [TaxLaw1] @relation(name: "TaxLaw1" ,onDelete: CASCADE )
   taxLaw2s: [TaxLaw2] @relation(name: "TaxLaw2" ,onDelete: CASCADE )
+  totalAccs: [TotalAcc] @relation(name: "TotalAcc" ,onDelete: CASCADE) 
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
@@ -43,6 +44,16 @@ type TaxLaw1 {
 type TaxLaw2 {
   id: ID! @id
   user: User! @relation(name: "TaxLaw2")
+  score: Float!
+  round: String!
+  academy: String!
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type TotalAcc {
+  id: ID! @id
+  user: User! @relation(name: "TotalAcc")
   score: Float!
   round: String!
   academy: String!

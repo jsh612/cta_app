@@ -16,17 +16,23 @@ export default {
             AND: [{ round }, { academy }]
           }
         });
-        const taxLaw1s = await prisma.taxLaw1s({
+        const totalAccs = await prisma.totalAccs({
           where: {
             AND: [{ round }, { academy }]
           }
         });
-        const taxLaw2s = await prisma.taxLaw2s({
-          where: {
-            AND: [{ round }, { academy }]
-          }
-        });
-        return { accs, taxAccs, taxLaw1s, taxLaw2s };
+        // const taxLaw1s = await prisma.taxLaw1s({
+        //   where: {
+        //     AND: [{ round }, { academy }]
+        //   }
+        // });
+        // const taxLaw2s = await prisma.taxLaw2s({
+        //   where: {
+        //     AND: [{ round }, { academy }]
+        //   }
+        // });
+        // return { accs, taxAccs, totalAccs, taxLaw1s, taxLaw2s };
+        return { accs, taxAccs, totalAccs };
       } catch (error) {
         console.log("seeRound error: ", error);
       }

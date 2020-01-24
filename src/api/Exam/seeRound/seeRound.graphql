@@ -3,6 +3,7 @@ type Round {
   taxAccs: [TaxAcc!]!
   taxLaw1s: [TaxLaw1!]!
   taxLaw2s: [TaxLaw2!]!
+  totalAccs: [TotalAcc!]!
 }
 
 type Query {

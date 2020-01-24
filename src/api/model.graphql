@@ -6,6 +6,7 @@ type User {
   taxAccs: [TaxAcc]
   taxLaw1s: [TaxLaw1]
   taxLaw2s: [TaxLaw2]
+  totalAccs: [TotalAcc]
   createdAt: String!
   updatedAt: String!
 }
@@ -56,4 +57,14 @@ type RoundScore {
   taxAccs: [TaxAcc]
   taxLaw1s: [TaxLaw1]
   taxLaw2s: [TaxLaw2]
+}
+
+type TotalAcc {
+  id: ID!
+  user: User!
+  score: Float!
+  round: String!
+  academy: String!
+  createdAt: String!
+  updatedAt: String!
 }
