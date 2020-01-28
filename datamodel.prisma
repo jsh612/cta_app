@@ -15,7 +15,8 @@ type Acc {
   id: ID! @id
   user: User! @relation(name: "Acc")
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -25,7 +26,8 @@ type TaxAcc {
   id: ID! @id
   user: User! @relation(name: "TaxAcc")
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -35,7 +37,8 @@ type TaxLaw1 {
   id: ID! @id
   user: User! @relation(name: "TaxLaw1")
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -45,7 +48,8 @@ type TaxLaw2 {
   id: ID! @id
   user: User! @relation(name: "TaxLaw2")
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -55,7 +59,8 @@ type TotalAcc {
   id: ID! @id
   user: User! @relation(name: "TotalAcc")
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt

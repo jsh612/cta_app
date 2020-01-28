@@ -15,7 +15,8 @@ type Acc {
   id: ID!
   user: User!
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: String!
   updatedAt: String!
@@ -25,7 +26,8 @@ type TaxAcc {
   id: ID!
   user: User!
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: String!
   updatedAt: String!
@@ -35,7 +37,8 @@ type TaxLaw1 {
   id: ID!
   user: User!
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: String!
   updatedAt: String!
@@ -45,7 +48,8 @@ type TaxLaw2 {
   id: ID!
   user: User!
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: String!
   updatedAt: String!
@@ -63,7 +67,8 @@ type TotalAcc {
   id: ID!
   user: User!
   score: Float!
-  round: String!
+  round: Int!
+  episode: Int!
   academy: String!
   createdAt: String!
   updatedAt: String!
