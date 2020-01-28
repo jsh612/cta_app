@@ -1,4 +1,5 @@
 import { prisma } from "../../../../generated/prisma-client";
+import { createRank } from "../../../utils";
 
 export default {
   Mutation: {
@@ -11,19 +12,19 @@ export default {
       }
       const exists = await prisma.user({ id: user.id }).taxAccs({
         where: {
-          AND: [{ round }, { episode }]
+          AND: [{ round }, { episode }, { academy }]
         }
       });
       const existOther = await prisma.user({ id: user.id }).accs({
         where: {
-          AND: [{ round }, { episode }]
+          AND: [{ round }, { episode }, { academy }]
         }
       });
       if (existOther.length !== 0) {
         const sumScore = existOther[0].score + score;
         const totalExists = await prisma.user({ id: user.id }).totalAccs({
           where: {
-            AND: [{ round }, { episode }]
+            AND: [{ round }, { episode }, { academy }]
           }
         });
         if (totalExists.length !== 0) {
@@ -59,6 +60,13 @@ export default {
             id: exists[0].id
           }
         });
+        createRank(
+          prisma.taxAccs,
+          prisma.updateTaxAcc,
+          round,
+          episode,
+          academy
+        );
         return taxAcc;
       }
       const taxAcc = await prisma.createTaxAcc({
@@ -72,6 +80,7 @@ export default {
           }
         }
       });
+      createRank(prisma.taxAccs, prisma.updateTaxAcc, round, episode, academy);
       return taxAcc;
     }
   }
