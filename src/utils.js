@@ -23,7 +23,6 @@ export const createRank = async (
     }
   });
   const rankList = notRankList.sort((a, b) => b.score - a.score);
-  console.log("랭크 배열", rankList);
   for (let i = 0; i < rankList.length; i++) {
     if (i === 0) {
       await updateFunc({

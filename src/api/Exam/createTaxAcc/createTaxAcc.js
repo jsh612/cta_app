@@ -49,6 +49,13 @@ export default {
             }
           });
         }
+        createRank(
+          prisma.totalAccs,
+          prisma.updateTotalAcc,
+          round,
+          episode,
+          academy
+        );
       }
       if (exists.length !== 0) {
         //이미 작성한 점수가 존재하는 경우 기존 점수 수정
