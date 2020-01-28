@@ -4,26 +4,26 @@ export default {
   Mutation: {
     createTaxAcc: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { score, round, academy } = args;
+      const { score, round, episode, academy } = args;
       const { user } = request;
       if (score === "") {
         throw Error("점수를 입력해 주세요");
       }
       const exists = await prisma.user({ id: user.id }).taxAccs({
         where: {
-          round
+          AND: [{ round }, { episode }]
         }
       });
       const existOther = await prisma.user({ id: user.id }).accs({
         where: {
-          round
+          AND: [{ round }, { episode }]
         }
       });
       if (existOther.length !== 0) {
         const sumScore = existOther[0].score + score;
         const totalExists = await prisma.user({ id: user.id }).totalAccs({
           where: {
-            round
+            AND: [{ round }, { episode }]
           }
         });
         if (totalExists.length !== 0) {
@@ -39,6 +39,7 @@ export default {
           await prisma.createTotalAcc({
             score: sumScore,
             round,
+            episode,
             academy,
             user: {
               connect: {
@@ -63,6 +64,7 @@ export default {
       const taxAcc = await prisma.createTaxAcc({
         score,
         round,
+        episode,
         academy,
         user: {
           connect: {

@@ -1,3 +1,8 @@
 type Mutation {
-  createTaxAcc(score: Float!, round: String!, academy: String!): TaxAcc!
+  createTaxAcc(
+    score: Float!
+    round: Int!
+    episode: Int!
+    academy: String!
+  ): TaxAcc!
 }

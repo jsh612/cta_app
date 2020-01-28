@@ -18,6 +18,7 @@ type Acc {
   round: Int!
   episode: Int!
   academy: String!
+  rank: Int
   createdAt: String!
   updatedAt: String!
 }
@@ -29,6 +30,7 @@ type TaxAcc {
   round: Int!
   episode: Int!
   academy: String!
+  rank: Int
   createdAt: String!
   updatedAt: String!
 }
@@ -40,6 +42,7 @@ type TaxLaw1 {
   round: Int!
   episode: Int!
   academy: String!
+  rank: Int
   createdAt: String!
   updatedAt: String!
 }
@@ -51,6 +54,7 @@ type TaxLaw2 {
   round: Int!
   episode: Int!
   academy: String!
+  rank: Int
   createdAt: String!
   updatedAt: String!
 }
@@ -70,6 +74,7 @@ type TotalAcc {
   round: Int!
   episode: Int!
   academy: String!
+  rank: Int
   createdAt: String!
   updatedAt: String!
 }
