@@ -4,21 +4,21 @@ export default {
   Query: {
     seeRound: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { round, academy } = args;
+      const { round, episode, academy } = args;
       try {
         const accs = await prisma.accs({
           where: {
-            AND: [{ round }, { academy }]
+            AND: [{ round }, { episode }, { academy }]
           }
         });
         const taxAccs = await prisma.taxAccs({
           where: {
-            AND: [{ round }, { academy }]
+            AND: [{ round }, { episode }, { academy }]
           }
         });
         const totalAccs = await prisma.totalAccs({
           where: {
-            AND: [{ round }, { academy }]
+            AND: [{ round }, { episode }, { academy }]
           }
         });
         // const taxLaw1s = await prisma.taxLaw1s({

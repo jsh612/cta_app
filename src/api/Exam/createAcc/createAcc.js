@@ -83,6 +83,7 @@ export default {
           round,
           episode,
           academy,
+          score,
           exists[0].score
         );
         return acc;
