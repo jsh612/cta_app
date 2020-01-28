@@ -36,6 +36,15 @@ export default {
               id: totalExists[0].id
             }
           });
+          createRank(
+            prisma.totalAccs,
+            prisma.updateTotalAcc,
+            round,
+            episode,
+            academy,
+            sumScore,
+            totalExists[0].score
+          );
         } else {
           await prisma.createTotalAcc({
             score: sumScore,
@@ -48,14 +57,15 @@ export default {
               }
             }
           });
+          createRank(
+            prisma.totalAccs,
+            prisma.updateTotalAcc,
+            round,
+            episode,
+            academy,
+            sumScore
+          );
         }
-        createRank(
-          prisma.totalAccs,
-          prisma.updateTotalAcc,
-          round,
-          episode,
-          academy
-        );
       }
       if (exists.length !== 0) {
         //이미 작성한 점수가 존재하는 경우 기존 점수 수정
@@ -72,7 +82,9 @@ export default {
           prisma.updateTaxAcc,
           round,
           episode,
-          academy
+          academy,
+          score,
+          exists[0].score
         );
         return taxAcc;
       }
@@ -87,7 +99,14 @@ export default {
           }
         }
       });
-      createRank(prisma.taxAccs, prisma.updateTaxAcc, round, episode, academy);
+      createRank(
+        prisma.taxAccs,
+        prisma.updateTaxAcc,
+        round,
+        episode,
+        academy,
+        score
+      );
       return taxAcc;
     }
   }
