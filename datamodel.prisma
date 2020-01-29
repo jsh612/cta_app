@@ -70,3 +70,26 @@ type TotalAcc {
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
 }
+
+type Notices {
+  id: ID! @id
+  name: String! @unique
+  ctaNotice : [CtaNotice] @relation(name: "CtaNotice" ,onDelete: CASCADE )
+  eduNotice : [EduNotice] @relation(name: "EduNotice" ,onDelete: CASCADE )
+}
+
+type CtaNotice {
+  id: ID! @id
+  notices: Notices! @relation(name: "CtaNotice")
+  title: String!
+  content: String!
+  url: String
+}
+
+type EduNotice {
+  id: ID! @id
+  notices: Notices! @relation(name: "EduNotice")
+  title: String!
+  content: String!
+  url: String
+}

@@ -78,3 +78,26 @@ type TotalAcc {
   createdAt: String!
   updatedAt: String!
 }
+
+type Notices {
+  id: ID!
+  name: String!
+  ctaNotice: [CtaNotice]
+  eduNotice: [EduNotice]
+}
+
+type CtaNotice {
+  id: ID!
+  notices: Notices!
+  title: String!
+  content: String!
+  url: String
+}
+
+type EduNotice {
+  id: ID!
+  notices: Notices!
+  title: String!
+  content: String!
+  url: String
+}
