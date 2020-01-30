@@ -45,7 +45,7 @@ type TaxLaw1 {
   episode: Int!
   academy: String!
   rank: Int
-  year: Int
+  year: Int!
   createdAt: String!
   updatedAt: String!
 }
@@ -58,7 +58,7 @@ type TaxLaw2 {
   episode: Int!
   academy: String!
   rank: Int
-  year: Int
+  year: Int!
   createdAt: String!
   updatedAt: String!
 }
@@ -79,7 +79,7 @@ type TotalAcc {
   episode: Int!
   academy: String!
   rank: Int
-  year: Int
+  year: Int!
   createdAt: String!
   updatedAt: String!
 }
@@ -89,6 +89,8 @@ type Notices {
   name: String!
   ctaNotice: [CtaNotice]
   eduNotice: [EduNotice]
+  createdAt: String!
+  updatedAt: String!
 }
 
 type CtaNotice {
@@ -97,6 +99,8 @@ type CtaNotice {
   title: String!
   content: String!
   url: String
+  createdAt: String!
+  updatedAt: String!
 }
 
 type EduNotice {
@@ -105,4 +109,6 @@ type EduNotice {
   title: String!
   content: String!
   url: String
+  createdAt: String!
+  updatedAt: String!
 }

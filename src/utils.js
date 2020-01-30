@@ -17,7 +17,7 @@ export const createRank = async (
   episode,
   academy,
   year,
-  newScore = 100,
+  newScore,
   oldScore
 ) => {
   const notRankList = await searchFunc({
@@ -25,6 +25,16 @@ export const createRank = async (
       AND: [{ round }, { episode }, { academy }, { year }]
     }
   });
+  if (notRankList.length === 1) {
+    return updateFunc({
+      where: {
+        id: notRankList[0].id
+      },
+      data: {
+        rank: 1
+      }
+    });
+  }
   const rankList = notRankList.sort((a, b) => b.score - a.score);
   for (let i = 0; i < rankList.length; i++) {
     if (
@@ -52,7 +62,6 @@ export const createRank = async (
               rank: rankList[i - 1].rank
             }
           });
-          //rank 입력을 위한 일시적 배열
           rankList[i].rank = rankList[i - 1].rank;
         } else {
           await updateFunc({

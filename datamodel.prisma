@@ -18,7 +18,7 @@ type Acc {
   round: Int!
   episode: Int!
   academy: String!
-  rank: Int!
+  rank: Int
   year: Int!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -44,7 +44,7 @@ type TaxLaw1 {
   round: Int!
   episode: Int!
   academy: String!
-  rank: Int!
+  rank: Int
   year: Int!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -57,7 +57,7 @@ type TaxLaw2 {
   round: Int!
   episode: Int!
   academy: String!
-  rank: Int!
+  rank: Int
   year: Int!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -70,7 +70,7 @@ type TotalAcc {
   round: Int!
   episode: Int!
   academy: String!
-  rank: Int!
+  rank: Int
   year: Int!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt
@@ -81,6 +81,8 @@ type Notices {
   name: String! @unique
   ctaNotice : [CtaNotice] @relation(name: "CtaNotice" ,onDelete: CASCADE )
   eduNotice : [EduNotice] @relation(name: "EduNotice" ,onDelete: CASCADE )
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
 }
 
 type CtaNotice {
@@ -89,6 +91,8 @@ type CtaNotice {
   title: String!
   content: String!
   url: String
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
 }
 
 type EduNotice {
@@ -97,4 +101,6 @@ type EduNotice {
   title: String!
   content: String!
   url: String
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
 }
