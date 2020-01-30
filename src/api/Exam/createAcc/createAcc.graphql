@@ -1,3 +1,9 @@
 type Mutation {
-  createAcc(score: Float!, round: Int!, episode: Int!, academy: String!): Acc!
+  createAcc(
+    score: Float!
+    round: Int!
+    episode: Int!
+    academy: String!
+    year: Int!
+  ): Acc!
 }

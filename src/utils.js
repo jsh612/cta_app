@@ -16,12 +16,13 @@ export const createRank = async (
   round,
   episode,
   academy,
+  year,
   newScore = 100,
   oldScore
 ) => {
   const notRankList = await searchFunc({
     where: {
-      AND: [{ round }, { episode }, { academy }]
+      AND: [{ round }, { episode }, { academy }, { year }]
     }
   });
   const rankList = notRankList.sort((a, b) => b.score - a.score);

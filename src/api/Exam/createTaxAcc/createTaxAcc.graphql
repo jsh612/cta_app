@@ -4,5 +4,6 @@ type Mutation {
     round: Int!
     episode: Int!
     academy: String!
+    year: Int!
   ): TaxAcc!
 }
