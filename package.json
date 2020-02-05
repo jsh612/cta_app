@@ -5,6 +5,10 @@
   "repository": "https://github.com/jsh612/cta_app",
   "author": "seungho Jeon <urijsh612@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "yarn": "1.21.1",
+    "node": "12.13.0"
+  },
   "dependencies": {
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
