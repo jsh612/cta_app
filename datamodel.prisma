@@ -31,7 +31,7 @@ type TaxAcc {
   round: Int!
   episode: Int!
   academy: String!
-  rank: Int!
+  rank: Int
   year: Int!
   createdAt: DateTime @createdAt
   updatedAt: DateTime @updatedAt

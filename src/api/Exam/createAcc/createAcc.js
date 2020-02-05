@@ -92,7 +92,6 @@ export default {
         );
         return acc;
       }
-      console.log("문제지점::::::");
       const acc = await prisma.createAcc({
         score,
         round,

@@ -10,7 +10,8 @@ export default {
         username
       });
       if (exists) {
-        throw Error("해당 아이디가 존재합니다.");
+        // throw Error("해당 아이디가 존재합니다~~.");
+        return false;
       }
       try {
         const user = await prisma.createUser({
@@ -19,7 +20,7 @@ export default {
         });
         return user;
       } catch (error) {
-        console.log("createAccount 에러:", error);
+        // console.log("createAccount 에러:", error);
         return false;
       }
     }
