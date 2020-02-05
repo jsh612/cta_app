@@ -64,4 +64,3 @@ typings/
 generated
 build
 package-lock.json
-prisma.yml
