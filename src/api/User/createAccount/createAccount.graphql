@@ -1,3 +1,7 @@
 type Mutation {
-  createAccount(username: String!, password: String!): Boolean
+  createAccount(username: String!, password: String!): User
+}
+
+type Query {
+  thing: String!
 }

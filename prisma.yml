@@ -1,6 +1,6 @@
-endpoint: https://us1.prisma.sh/seungho-jeon-66aa90/cta_app/dev
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
-# secret: "W?4bmVF/:6$WNJ_bSc)Lds<k6WU-(d`!z#9:{U&y"
+secret: ${env:MY_SECRET}
 
 generate:
   - generator: javascript-client

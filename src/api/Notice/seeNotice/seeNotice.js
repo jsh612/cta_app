@@ -9,8 +9,8 @@ export default {
         const notice = await prisma.notices({ name });
         return notice;
       } catch (error) {
-        // console.log("공지열람 오류::", error);
-        // null;
+        console.log("공지열람 오류::", error);
+        return null;
       }
     }
   }
